@@ -1,3 +1,6 @@
+This is a git repo for a new  wordpress theme I'm working on.
+I'm going to migrate my blog from middleman to word press.
+
 ## Useful commands
 
 ### Enter inside the container
