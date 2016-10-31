@@ -7,6 +7,20 @@
  * @package _s
  */
 
+function js_uri(){
+	return get_template_directory_uri() . '/assets/js';
+}
+function css_uri(){
+	return get_template_directory_uri() . '/assets/js';
+}
+function vendor_uri(){
+	return get_template_directory_uri() . '/assets/vendor';
+}
+function node_modules_uri(){
+	return get_template_directory_uri() . '/node_modules';
+}
+
+
 if ( ! function_exists( '_s_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -42,11 +56,6 @@ function _s_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', '_s' ),
-	) );
-
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -75,66 +84,101 @@ add_action( 'after_setup_theme', '_s_setup' );
  *
  * @global int $content_width
  */
-function _s_content_width() {
-	$GLOBALS['content_width'] = apply_filters( '_s_content_width', 640 );
-}
-add_action( 'after_setup_theme', '_s_content_width', 0 );
+// function _s_content_width() {
+// 	$GLOBALS['content_width'] = apply_filters( '_s_content_width', 640 );
+// }
+
+// add_action( 'after_setup_theme', '_s_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function _s_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', '_s' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', '_s' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+// function _s_widgets_init() {
+// 	register_sidebar( array(
+// 		'name'          => esc_html__( 'Sidebar', '_s' ),
+// 		'id'            => 'sidebar-1',
+// 		'description'   => esc_html__( 'Add widgets here.', '_s' ),
+// 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+// 		'after_widget'  => '</section>',
+// 		'before_title'  => '<h2 class="widget-title">',
+// 		'after_title'   => '</h2>',
+// 	) );
+// }
+// add_action( 'widgets_init', '_s_widgets_init' );
+
+
+
+
+
+
+/**
+ * Register all menus so they appear in the Dashboard and Admin can edit them
+ */
+// function register_my_menus() {
+//   // register_nav_menus(
+//   //   array(
+//   //   'header-nav-bar' => __( 'Header Menu' ),
+//   //   )
+//   // );
+// }
+// add_action( 'init', 'register_my_menus' );
+
+
+/**
+ * Enqueue scripts
+ */
+function enqueueueue_scripts(){
+	wp_enqueue_script('jquery');
+		// bootstrapizzle
+		wp_enqueue_script('bootstrap-js',
+	       node_modules_uri() . '/bootstrap/dist/js/bootstrap.min.js' );
 }
-add_action( 'widgets_init', '_s_widgets_init' );
+add_action( 'wp_enqueue_scripts', 'enqueueueue_scripts' );
 
 /**
- * Enqueue scripts and styles.
+ * Enqueue styles.
  */
-function _s_scripts() {
-	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
+// terrible nameing wordpress.....you use wp_enqueue_scripts for both scripts and styles....
+function enqueueueue_styles() {
+	// custom style
+	wp_enqueue_style( 'main-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	wp_enqueue_script( '_s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	// bootstrappizzle
+	wp_enqueue_style('bootstrap',
+	       node_modules_uri() . '/bootstrap/dist/css/bootstrap.min.css' );
 }
-add_action( 'wp_enqueue_scripts', '_s_scripts' );
+add_action( 'wp_enqueue_scripts', 'enqueueueue_styles' );
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
 
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
 
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
 
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
+
+
+
+// /**
+//  * Implement the Custom Header feature.
+//  */
+// require get_template_directory() . '/inc/custom-header.php';
+
+// /**
+//  * Custom template tags for this theme.
+//  */
+// require get_template_directory() . '/inc/template-tags.php';
+
+// *
+//  * Custom functions that act independently of the theme templates.
+
+// require get_template_directory() . '/inc/extras.php';
+
+// /**
+//  * Customizer additions.
+//  */
+// require get_template_directory() . '/inc/customizer.php';
+
+// /**
+//  * Load Jetpack compatibility file.
+//  */
+// require get_template_directory() . '/inc/jetpack.php';

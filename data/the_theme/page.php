@@ -11,28 +11,14 @@
  *
  * @package _s
  */
+?>
 
-get_header(); ?>
+<?php get_header() // the fricking top part...?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
 
-			<?php
-			while ( have_posts() ) : the_post();
+    <main class="container-fluid" role="main">
+     Default tizzy template
+    </main><!-- #main -->
 
-				get_template_part( 'template-parts/content', 'page' );
+<?php get_footer(); // the bottom part...s?>
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-
-			endwhile; // End of the loop.
-			?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();

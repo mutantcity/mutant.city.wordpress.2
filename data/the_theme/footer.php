@@ -11,7 +11,6 @@
 
 ?>
 
-	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
@@ -20,9 +19,9 @@
 			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', '_s' ), '_s', '<a href="http://automattic.com/" rel="designer">Automattic</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
-</div><!-- #page -->
 
-<?php wp_footer(); ?>
+    <?php wp_footer(); //wordpress include for plug-ins?>
+    <?php get_template_part( 'partials/_riotjs' ); // factor this out at some point into a plugin maybe?>
 
-</body>
+  </body>
 </html>
