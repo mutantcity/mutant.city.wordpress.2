@@ -11,7 +11,16 @@ get_header(); ?>
 
 <div class ="container-fluid">
 	<?php while ( have_posts() ) : the_post(); ?>
-		<?php get_template_part( 'partials/_single_post'); ?>
+
+    <?php get_template_part( 'partials/_single_post'); ?>
+
+    <hr>
+
+    <?php if ( comments_open() || get_comments_number() ) :
+     comments_template();
+    endif;
+    ?>
+
 	<?php endwhile; // end of the loop. ?>
 </div>
 	<?php

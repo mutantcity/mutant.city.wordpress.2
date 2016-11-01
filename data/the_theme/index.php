@@ -12,7 +12,7 @@
 
       <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-        <div class="post">
+        <div class="post post-index-page">
               <a href="<?php the_permalink(); ?>"
                   rel="bookmark"
                   title="Permanent Link to <?php the_title_attribute(); ?>">

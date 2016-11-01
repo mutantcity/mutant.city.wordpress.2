@@ -14,7 +14,7 @@
             <a class="navbar-brand" href="/">
               <delayed-class delay="1500" addclass="glyphicon glyphicon-tree-deciduous"></delayed-class>
               <baffle-tag
-                text="<?php is_home() ? print "Welcome to Mutant City!" : the_title() ?>">
+                text="<?php is_home() ? print "Welcome to Mutant City pardner!" : print "Mutant City" ?>">
               </baffle-tag>
             </a>
         </div>
