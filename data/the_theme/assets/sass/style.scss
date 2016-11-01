@@ -42,4 +42,15 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   ## Captions
   ## Galleries
 --------------------------------------------------------------*/
+
+/*Libs*/
+/*
+@import "../vendor/typeplate/_typeplate-index";
+@import "../vendor/bourbon/bourbon";
+@import "../vendor/neat/neat";
+*/
+
+
 @import "sticky_footer";
+@import "typography";
+@import "layout";

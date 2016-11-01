@@ -6,7 +6,6 @@
  */
 function enqueueueue_scripts(){
   wp_enqueue_script('jquery');
-    // bootstrapizzle
     wp_enqueue_script('bootstrap-js',
          node_modules_uri() . '/bootstrap/dist/js/bootstrap.min.js' );
 }

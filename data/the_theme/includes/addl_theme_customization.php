@@ -15,4 +15,9 @@
 
 
 
-
+// this is hackery to add a class to the first paragraph of the_content()
+// apparently, this is how it's done in wordpress...
+function first_paragraph($content){
+    return preg_replace('/<p([^>]+)?>/', '<p$1 class="the_content">', $content, 1);
+}
+add_filter('the_content', 'first_paragraph');
