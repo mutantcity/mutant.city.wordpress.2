@@ -41,12 +41,22 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   ## Captions
   ## Galleries
 --------------------------------------------------------------*/
-/*@import "../vendor/normalize/sass/normalize/import-now";
-@import "../vendor/bourbon/bourbon";
-@import "../vendor/neat/neat";
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%; }
 
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px; }
 
-@import "layout/layout";
-@import "navigation/navigation";*/
+.site-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "AAAA;;;;;;;;;;;;;;;;;;;;EAoBE;AAEF;;;;;;;;;;;;;;;;;;;;;gEAqBgE;AAChE;;;;;;kCAMkC",
-"sources": ["assets/sass/style.scss"],
+"mappings": "AAAA;;;;;;;;;;;;;;;;;;;;EAoBE;AAEF;;;;;;;;;;;;;;;;;;;;;gEAqBgE;AC3ChE;qDACqD;AACrD,IAAK;EACH,QAAQ,EAAE,QAAQ;EAClB,UAAU,EAAE,IAAI;;AAElB,IAAK;EACH,oCAAoC;EACpC,aAAa,EAAE,IAAI;;AAGrB,YAAa;EACX,QAAQ,EAAE,QAAQ;EAClB,MAAM,EAAE,CAAC;EACT,KAAK,EAAE,IAAI;EACX,6CAA6C;EAC7C,MAAM,EAAE,IAAI;EACZ,gBAAgB,EAAE,OAAO",
+"sources": ["assets/sass/style.scss","assets/sass/sticky_footer.scss"],
 "names": [],
 "file": "style.css"
 }
