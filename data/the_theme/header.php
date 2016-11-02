@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes();// required for wordpress plumbing ?>>
 
-  <?php get_template_part( 'partials/_head'); ?>
+  <?php get_template_part( 'partials/_head_tag'); ?>
 
   <body <?php body_class(); //required for wordpress plumbing?>>
 

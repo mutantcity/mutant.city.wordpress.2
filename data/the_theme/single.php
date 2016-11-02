@@ -14,7 +14,7 @@ get_header(); ?>
 
     <?php get_template_part( 'partials/_single_post'); ?>
 
-    <hr>
+    <hr style="border-top: 5px solid #e7e7e7">
 
     <?php if ( comments_open() || get_comments_number() ) :
      comments_template();
@@ -23,5 +23,5 @@ get_header(); ?>
 
 	<?php endwhile; // end of the loop. ?>
 </div>
-	<?php
-get_footer();
+
+<?php get_footer(); ?>

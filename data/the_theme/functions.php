@@ -35,9 +35,12 @@ require get_template_directory() . '/includes/enqueue_assets.php';
 require get_template_directory() . '/includes/register_widgets.php';
 // Register menus
 require get_template_directory() . '/includes/register_menus.php';
-// Just various other customization not fitting in above categories
+// Get custom comment callbacks/walkers
+require get_template_directory() . '/includes/customize_comment_list.php';
+// Get custom comment callbacks/walkers
+require get_template_directory() . '/includes/customize_comment_form.php';
+// Just various other customization not fitting in above categories.
 require get_template_directory() . '/includes/addl_theme_customization.php';
-
 
 
 

@@ -20,9 +20,9 @@ add_action( 'wp_enqueue_scripts', 'enqueueueue_scripts' );
 // terrible nameing wordpress.....you use wp_enqueue_scripts for both scripts and styles....
 function enqueueueue_styles() {
   // custom style
-  wp_enqueue_style( 'main-style', get_stylesheet_uri() );
   wp_enqueue_style('bootstrap',
          node_modules_uri() . '/bootstrap/dist/css/bootstrap.min.css' );
+  wp_enqueue_style( 'main-style', get_stylesheet_uri() );
 }
 add_action( 'wp_enqueue_scripts', 'enqueueueue_styles' );
 

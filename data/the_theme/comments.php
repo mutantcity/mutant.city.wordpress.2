@@ -21,18 +21,20 @@ if ( post_password_required() )
 
     <?php if ( have_comments() ) : ?>
 
-        <ol class="comment-list">
+        <div class="comment-list">
             <?php
-                wp_list_comments( array(
-                    'style'       => 'ol',
-                    'short_ping'  => true,
-                    'avatar_size' => 74,
-                ) );
+                // wp_list_comments( array(
+                //     'style'       => 'ol',
+                //     'short_ping'  => true,
+                //     'avatar_size' => 74,
+                // ) );
             ?>
-        </ol><!-- .comment-list -->
+						<?php wp_list_comments( 'type=comment&callback=mytheme_comment_2' ); ?>
+        </div><!-- .comment-list -->
 
     <?php endif; // have_comments() ?>
 
-    <?php comment_form(); ?>
+    <hr style="border-top: 5px solid #e7e7e7">
+    <?php custom_comment_form(); ?>
 
 </div><!-- #comments -->
